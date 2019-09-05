@@ -1,1 +1,136 @@
 Hello World!
+--
+-- PostgreSQL database dump
+--
+
+-- Dumped from database version 9.5.14
+-- Dumped by pg_dump version 9.5.14
+
+SET statement_timeout = 0;
+SET lock_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SELECT pg_catalog.set_config('search_path', '', false);
+SET check_function_bodies = false;
+SET client_min_messages = warning;
+SET row_security = off;
+
+SET default_tablespace = '';
+
+SET default_with_oids = false;
+
+--
+-- Name: histdb_chromosome; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.histdb_chromosome (
+    id integer NOT NULL,
+    name character varying(255) NOT NULL
+);
+
+
+ALTER TABLE public.histdb_chromosome OWNER TO postgres;
+
+--
+-- Name: histdb_chromosome_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE public.histdb_chromosome_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.histdb_chromosome_id_seq OWNER TO postgres;
+
+--
+-- Name: histdb_chromosome_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE public.histdb_chromosome_id_seq OWNED BY public.histdb_chromosome.id;
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.histdb_chromosome ALTER COLUMN id SET DEFAULT nextval('public.histdb_chromosome_id_seq'::regclass);
+
+
+--
+-- Data for Name: histdb_chromosome; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.histdb_chromosome (id, name) FROM stdin;
+1	1
+2	2
+3	3
+4	4
+5	5
+6	6
+7	7
+8	8
+9	9
+10	10
+11	11
+12	14
+13	15
+14	16
+15	17
+16	19
+17	20
+18	X
+19	13
+20	22
+21	12
+22	18
+23	21
+24	Y
+25	MT
+26	6_MCF_HAP5
+27	6_MANN_HAP4
+28	6_SSTO_HAP7
+29	6_DBB_HAP3
+30	6_QBL_HAP6
+31	6_COX_HAP2
+32	17_CTG5_HAP1
+33	17_GL000205_RANDOM
+34	1_GL000192_RANDOM
+35	4_CTG9_HAP1
+36	4_GL000193_RANDOM
+37	4_GL000194_RANDOM
+38	6_APD_HAP1
+39	7_GL000195_RANDOM
+40	UN_GL000211
+41	UN_GL000212
+42	UN_GL000213
+43	UN_GL000218
+44	UN_GL000219
+45	UN_GL000220
+46	UN_GL000224
+47	UN_GL000228
+48	UN_GL000241
+\.
+
+
+--
+-- Name: histdb_chromosome_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.histdb_chromosome_id_seq', 49, false);
+
+
+--
+-- Name: histdb_chromosome_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.histdb_chromosome
+    ADD CONSTRAINT histdb_chromosome_pkey PRIMARY KEY (id);
+
+
+--
+-- PostgreSQL database dump complete
+--
+
